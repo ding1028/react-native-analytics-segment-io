@@ -1,5 +1,6 @@
 buildscript {
   repositories {
+    google()
     jcenter()
   }
 
@@ -18,7 +19,7 @@ def safeExtGet(prop, fallback) {
 
 android {
   compileSdkVersion safeExtGet('compileSdkVersion', 25)
-  buildToolsVersion safeExtGet('buildToolsVersion', '25.0.2')
+  buildToolsVersion safeExtGet('buildToolsVersion', '25.3.0')
 
   defaultConfig {
     minSdkVersion safeExtGet('minSdkVersion', 16)
@@ -29,6 +30,7 @@ android {
 }
 
 repositories {
+  google()
   maven { url "$rootDir/../node_modules/react-native/android" }
   mavenCentral()
   maven { url "http://appboy.github.io/appboy-android-sdk/sdk" } // Required for Braze (formerly Appboy)
